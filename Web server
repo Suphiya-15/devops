@@ -1,0 +1,54 @@
+
+websserver:
+--> HTTP and HTTPS protocol
+---> http and https are communication protocol used when a user is commmunicate with seb browser.
+
+HTTP: (HyperText Transfer Protocol)
+--> HTTP is used to transfer web data between the client and server.
+--> port no 80 
+--> data is not encrypted
+
+HTTPS: (Hypertext Transfer Protocol Secure)
+--> HTTPSis besically HTTP+encryption 
+--> port no  443
+--> data is encrypted
+
+package manager:
+--> A apckage manager is a toll in linux which helps you to install, update, remove and manage package.
+eg: apt, yum, zypper, homebrew
+1. ubuntu/Debian : APT
+2. amazon Linux/Fedora : yum
+3. MAC os : homebrew
+4. openssuse: zypper
+
+demo 1: (host website on ec2 instance)
+1. create linux instance
+  -----> allow SSH, HTTP and HTTPS protocol
+2. connect
+sudo su -
+yum install httpd -y
+echo "<h1>comments</h1>" >/var/www/html/index.html
+systemctl start httpd
+3. select public ip address of instance and hit on web browser
+
+HW: nginx websserver
+hint:
+yum install nginx -y
+echo "" >/usr/share/nginx/html/index.html
+
+Volumes: 
+
+root volume: where the OS saved
+
+**Snapshot**
+--> snapshot is a point in time image of EBS volume.
+--> two ways:
+1. manual backup
+2. automatic backup 
+
+    --> to migrate an EBS from one AZ to another then create snapshot and create volume 
+    from the snapshot in the intended AZ.
+    --> EBS snapshot is an incremental backup.
+    --> the first backup of a volume backups all the data.
+    --> every next backup copies only a block of data that has changed since the last snapshot.
+

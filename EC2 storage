@@ -1,0 +1,15 @@
+Storage: 
+EBS : Elastic Block Storage
+--> Network attched Storage
+--> Persistent Storage
+
+EBS Volume types:
+1. SSD
+2. HDD
+3. Magnetic standard
+
+HDD vs SSD
+
+HDD : Hard Disk Drive
+SSD : Solid State Drive
+
