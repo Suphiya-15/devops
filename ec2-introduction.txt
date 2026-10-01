@@ -1,0 +1,104 @@
+           AWS
+                                    Amazon Web Service
+
+AWS is a cloud computing platform provided by Amazon that offers various IT resources and service 
+over the internet on a pay as you go basis.
+
+AWS white papers
+
+**AWS Global Infrastructure**
+1. Region:
+--> an AWS region is a sepearte geographical area in the world that containes one or more data centers.
+eg: ap-south-1, us-east-1
+
+2. Availabilty zone: 
+--> An AZ is an isolated location within an AWS region.
+--> each AZ is designed with independant infrastructure.
+--> eg: power, cooling, networking
+--> the goal is to reduce the chances that a failure in one AZ affects another AZ.
+
+
+                                         EC2
+                                    Elastic Compute Cloud
+                                          --------------> Compute
+
+    --> this service is used to create virtual machine in AWS
+    --> Virtual machine / VM / Server / Node / machine / instnace
+
+
+Demo:1 **Steps to create instance**:
+1. tags: Metadata about server
+
+2. AMI: Amazon MAchine Image : (selecting OS)
+--> AMI is a template which consist of OS and other software applications which are requied to launch your instamce.
+
+3. Instance type: (RAM + CPU)
+
+4. Firewall: Security group
+--> A security group is a set of firewall rules that control the traffic for your instance
+
+5. Storage:  HDD and SSD
+
+6. Key pair: 
+--> You can use a key pair to securely connect to your instance
+--> key pair: 2 kays: 1. public kay ---> kept with AWS
+                      2. private key ---> Downloaded by user
+
+c.w --> create amazon linux instance --> connect it --> delete it
+h.w --> craete ubuntu instance --> connect it --> delete it
+2> create windows instance 
+
+
+1. **Security Group** :
+1. Inbound rule : incoming traffic
+2. Outbound rule : outgoing traffic
+
+SSH protocol: Secure SHell:
+--> this protocol is used to connect linux instance remotely.
+--> SSH works on port no 22
+
+RDP protocol: Remote Desktop Protocol
+--> this protocol is used to connect windows instance remotely.
+--> RDP works on port no 3389
+
+demo 2: how to connect windows instance
+
+1. create windows instance
+   ----> allow RDP protocol
+2. click connact
+3. go to RDP tab
+4. download remote desktop shortcut file
+5. get windows password
+6. upload private key
+7. decrypt password
+8. copy password --->(save password)
+9. open RDP shortcut file
+10. connect
+11. paste password on it
+12. ok
+13. yes
+
+
+**Status Check**:
+-->  It is a health check performed by AWS to make sure your EC2 instance and the AWS infrastructure are working properly.
+
+two main status check:
+1. system status check:
+--> AWS infra
+    ---> AWS physical host
+    ---> networking
+    ---> power
+    ---> Hypervisor
+    ---> AWS hardware
+
+2. instance status check
+--> instance itself
+    ---> OS not responding
+    ---> kernel problems
+    --> network issue
+
+3. EBS reachability
+
+    2/2 check pass : all ok
+    1/2 check pass: system issue --> stop and start the instance
+    0/2 check pass: system + instance --> reboot instance
